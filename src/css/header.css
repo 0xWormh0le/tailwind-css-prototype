@@ -1,0 +1,68 @@
+.Header {
+  @apply bg-header;
+  @apply text-header-text;
+  padding-left: theme('config.sidebarWidth');
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  z-index: 8;
+  height: theme('config.headerHeight');
+}
+
+.Header > * {
+  @apply py-2;
+  @apply px-6;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.Header > *:not(:last-child):after {
+  content: ' ';
+  opacity: .3;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  border-right-width: 1px;
+  border-image: linear-gradient(
+      to bottom, 
+      #0000, 
+      theme('colors.header.text') 30%,
+      theme('colors.header.text') 70%,
+      #0000
+    ) 1 100%;
+}
+
+.Header__breadcrumb {
+  flex-grow: 1;
+  @apply pl-12;
+}
+
+.Header__breadcrumb--title {
+  @apply text-2xl;
+  @apply font-bold;
+  text-transform: uppercase;
+}
+
+.Header__alert-number {
+  font-size: 0.7rem;
+  border-radius: 100%;
+  color: white;
+  background-color: #CA2D78;
+  min-width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  right: 25%;
+}
+
+.Header__avatar img {
+  @apply mr-2;
+  max-width: 4em;
+  height: 100%;
+  border-radius: 20%;
+}
